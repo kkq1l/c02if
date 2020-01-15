@@ -7,28 +7,21 @@ int main()
 	setlocale(LC_ALL, "ru");
 
 	int n;
-	cout << "Введите год:" << endl;
+	cout << "‚ведите год:" << endl;
 	cin >> n;
-
-	if (n>=1 && n<=2200) {
-		if (n%4!=0) {
-			cout << "NORMAL";
+	if (n >= 1 || n <= 2200) {
+		if (((n % 4) == 0) && ((n % 100) != 0) || ((n % 400) == 0)) {
+			cout << "LEAP" << endl;
 		}
-		else if (n%100!=0) {
-			cout << "LEAP";
-		}
-		else {
-			if (n % 400 == 0) {
-				cout << "NORMAL";
-			}
-			else {
-				cout << "LEAP";
-			}
+		else
+		{
+			cout << "NORMANL" << endl;
 		}
 	}
 	else {
-		cout << "ERROR";
+	cout << "ERROR";
 	}
 
 	return 0;
 }
+
